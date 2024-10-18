@@ -1,21 +1,21 @@
 module.exports = {
   apps: [
-    {
-      name: "nextjs-app",
-      script: "../../fe/node_modules/next/dist/bin/next", // Path to Next.js start script
-      args: "start",
-      instances: 1,
-      exec_mode: "fork",
-      watch: false, // Next.js doesn't need watching as it has its own file watching mechanism
-      env: {
-        NODE_ENV: "development",
-        PORT: 3004, // Port for the Next.js app
-      },
-      env_production: {
-        NODE_ENV: "production",
-        PORT: 8080, // Production port for Next.js
-      },
-    },
+    // {
+    //   name: "nextjs-app",
+    //   script: "../../fe/node_modules/next/dist/bin/next", // Path to Next.js start script
+    //   args: "start",
+    //   instances: 1,
+    //   exec_mode: "fork",
+    //   watch: false, // Next.js doesn't need watching as it has its own file watching mechanism
+    //   env: {
+    //     NODE_ENV: "development",
+    //     PORT: 3004, // Port for the Next.js app
+    //   },
+    //   env_production: {
+    //     NODE_ENV: "production",
+    //     PORT: 8080, // Production port for Next.js
+    //   },
+    // },
     {
       name: "api-gateway",
       script: "../api-gateway/index.js", // Path to your entry file for the api-gateway service
