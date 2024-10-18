@@ -12,7 +12,10 @@ module.exports = {
       },
       env_production: {
         NODE_ENV: "production",
-        PORT: 8090,
+        GATEWAY_SERVER_PORT: 8090,
+        PUBLIC_SERVICE_URL: "http://localhost:5005/publicPostRoutes",
+        AUTH_SERVICE_URL: "http://localhost:5006/auth",
+        CHAT_SERVICE_URL: "http://localhost:5007/chat",
       },
     },
     {
@@ -26,8 +29,19 @@ module.exports = {
         PORT: 3001, // Port for Auth microservice
       },
       env_production: {
-        NODE_ENV: "production",
-        PORT: 5006,
+        // NODE_ENV: "production",
+        NODE_ENV: "PROD",
+        CURRENT_HOST: "http://localhost:5000",
+        SERVER_PORT: 5006,
+        JWT_SECRET: "your_jwt_secret",
+        ADMIN_EMAIL: "admin@gmail.com",
+
+        DB_USERNAME: "postgres",
+        DB_PASSWORD: "admin",
+        DB_HOST: "localhost",
+        DB_PORT: 5432,
+        DB_NAME: "auth",
+        DB_URL: "postgres://postgres:admin@localhost:5432/auth",
       },
     },
     {
@@ -42,8 +56,19 @@ module.exports = {
         PORT: 3002, // Port for Chat microservice
       },
       env_production: {
-        NODE_ENV: "production",
-        PORT: 5007,
+        // NODE_ENV: "production",
+        NODE_ENV: "DEV",
+        CURRENT_HOST: "http://localhost:5000",
+        SERVER_PORT: 5007,
+        JWT_SECRET: "your_jwt_secret",
+        API_GATEWAY_ENDPOINT: "http://localhost:8090",
+
+        DB_USERNAME: "postgres",
+        DB_PASSWORD: "admin",
+        DB_HOST: "localhost",
+        DB_PORT: 5432,
+        DB_NAME: "chat_app",
+        DB_URL: "postgres://postgres:admin@localhost:5432/chat_app",
       },
     },
     {
@@ -57,8 +82,18 @@ module.exports = {
         PORT: 3003, // Port for Public Post microservice
       },
       env_production: {
-        NODE_ENV: "production",
-        PORT: 5005,
+        // NODE_ENV: "production",
+        NODE_ENV: "DEV",
+        CURRENT_HOST: "http://localhost:5000",
+        SERVER_PORT: 5005,
+        JWT_SECRET: "your_jwt_secret",
+
+        DB_USERNAME: "postgres",
+        DB_PASSWORD: "admin",
+        DB_HOST: "localhost",
+        DB_PORT: 5432,
+        DB_NAME: "public_posts",
+        DB_URL: "postgres://postgres:admin@localhost:5432/public_posts",
       },
     },
   ],
