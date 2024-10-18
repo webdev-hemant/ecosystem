@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "api-gateway",
-      script: "./api-gateway/index.js", // Path to your entry file for the api-gateway service
+      script: "../api-gateway/index.js", // Path to your entry file for the api-gateway service
       instances: 1,
       exec_mode: "fork",
       watch: true, // Enable watching for file changes
@@ -17,7 +17,7 @@ module.exports = {
     },
     {
       name: "auth-microservice",
-      script: "./auth-microservice/index.js", // Path to your entry file for the auth service
+      script: "../auth-microservice/index.js", // Path to your entry file for the auth service
       instances: 1,
       exec_mode: "fork",
       watch: true,
@@ -32,7 +32,7 @@ module.exports = {
     },
     {
       name: "chat-microservice",
-      script: "./chat-microservice/index.js", // Path to your entry file for the chat service
+      script: "../chat-microservice/index.js", // Path to your entry file for the chat service
       instances: 1,
       exec_mode: "fork",
 
@@ -48,7 +48,7 @@ module.exports = {
     },
     {
       name: "publicPost-microservice",
-      script: "./publicPost-microservice/index.js", // Path to your entry file for the public post service
+      script: "../publicPost-microservice/index.js", // Path to your entry file for the public post service
       instances: 1,
       exec_mode: "fork",
       watch: true,
