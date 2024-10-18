@@ -37,7 +37,7 @@ module.exports = {
         ADMIN_EMAIL: "admin@gmail.com",
 
         DB_USERNAME: "postgres",
-        DB_PASSWORD: "admin",
+        DB_PASSWORD: "",
         DB_HOST: "localhost",
         DB_PORT: 5432,
         DB_NAME: "auth",
@@ -64,7 +64,7 @@ module.exports = {
         API_GATEWAY_ENDPOINT: "http://localhost:8090",
 
         DB_USERNAME: "postgres",
-        DB_PASSWORD: "admin",
+        DB_PASSWORD: "",
         DB_HOST: "localhost",
         DB_PORT: 5432,
         DB_NAME: "chat_app",
@@ -89,7 +89,7 @@ module.exports = {
         JWT_SECRET: "your_jwt_secret",
 
         DB_USERNAME: "postgres",
-        DB_PASSWORD: "admin",
+        DB_PASSWORD: "",
         DB_HOST: "localhost",
         DB_PORT: 5432,
         DB_NAME: "public_posts",
