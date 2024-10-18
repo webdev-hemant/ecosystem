@@ -113,4 +113,13 @@ module.exports = {
       },
     },
   ],
+  deploy: {
+    production: {
+      path: "../../fe",
+      "pre-deploy-local": "",
+      "post-deploy":
+        "npm install && npm run build && pm2 reload ecosystem.config.js --env production",
+      "pre-setup": "",
+    },
+  },
 };
