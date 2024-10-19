@@ -108,7 +108,10 @@ module.exports = {
       },
       env_production: {
         NODE_ENV: "production",
-        PORT: 5008, // You can specify production port as well, if needed
+        SERVER_PORT: 5008,
+        CURRENT_HOST: "http://localhost:5000",
+        JWT_SECRET: "your_jwt_secret",
+
         DB_USERNAME: "postgres",
         DB_PASSWORD: "admin",
         DB_HOST: "localhost",
