@@ -1,21 +1,5 @@
 module.exports = {
   apps: [
-    // {
-    //   name: "nextjs-app",
-    //   script: "../../fe/node_modules/next/dist/bin/next", // Path to Next.js start script
-    //   args: "start",
-    //   instances: 1,
-    //   exec_mode: "fork",
-    //   watch: false, // Next.js doesn't need watching as it has its own file watching mechanism
-    //   env: {
-    //     NODE_ENV: "development",
-    //     PORT: 3004, // Port for the Next.js app
-    //   },
-    //   env_production: {
-    //     NODE_ENV: "production",
-    //     PORT: 8080, // Production port for Next.js
-    //   },
-    // },
     {
       name: "api-gateway",
       script: "../api-gateway/index.js", // Path to your entry file for the api-gateway service
@@ -112,14 +96,26 @@ module.exports = {
         DB_URL: "postgres://postgres:admin@localhost:5432/public_posts",
       },
     },
-  ],
-  deploy: {
-    production: {
-      path: "../../fe",
-      "pre-deploy-local": "",
-      "post-deploy":
-        "npm install && npm run build && pm2 reload ecosystem.config.js --env production",
-      "pre-setup": "",
+    {
+      name: "s3_clone", // Name for your new application
+      script: "../s3_clone/index.js", // Path to your entry file for the s3_clone service
+      instances: 1,
+      exec_mode: "fork",
+      watch: true,
+      env: {
+        NODE_ENV: "development",
+        PORT: 5008, // Port for s3_clone
+      },
+      env_production: {
+        NODE_ENV: "production",
+        PORT: 5008, // You can specify production port as well, if needed
+        DB_USERNAME: "postgres",
+        DB_PASSWORD: "admin",
+        DB_HOST: "localhost",
+        DB_PORT: 5432,
+        DB_NAME: "s3_clone", // Specify your database name
+        DB_URL: "postgres://postgres:admin@localhost:5432/s3_clone", // Update as needed
+      },
     },
-  },
+  ],
 };
