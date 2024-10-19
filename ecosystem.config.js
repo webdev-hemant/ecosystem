@@ -16,6 +16,7 @@ module.exports = {
         PUBLIC_SERVICE_URL: "http://localhost:5005/publicPostRoutes",
         AUTH_SERVICE_URL: "http://localhost:5006/auth",
         CHAT_SERVICE_URL: "http://localhost:5007/chat",
+        S3_CLONE_SERVICE_URL: "http://localhost:5008/s3_clone",
       },
     },
     {
