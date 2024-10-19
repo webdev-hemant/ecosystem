@@ -1,25 +1,6 @@
 module.exports = {
   apps: [
     {
-      name: "api-gateway",
-      script: "../api-gateway/index.js", // Path to your entry file for the api-gateway service
-      instances: 1,
-      exec_mode: "fork",
-      watch: true, // Enable watching for file changes
-      env: {
-        NODE_ENV: "development",
-        PORT: 3000, // Port for API gateway
-      },
-      env_production: {
-        NODE_ENV: "production",
-        GATEWAY_SERVER_PORT: 8090,
-        PUBLIC_SERVICE_URL: "http://localhost:5005/publicPostRoutes",
-        AUTH_SERVICE_URL: "http://localhost:5006/auth",
-        CHAT_SERVICE_URL: "http://localhost:5007/chat",
-        S3_CLONE_SERVICE_URL: "http://localhost:5008/s3_clone",
-      },
-    },
-    {
       name: "auth-microservice",
       script: "../auth-microservice/index.js", // Path to your entry file for the auth service
       instances: 1,
@@ -119,6 +100,25 @@ module.exports = {
         DB_PORT: 5432,
         DB_NAME: "s3_clone", // Specify your database name
         DB_URL: "postgres://postgres:admin@localhost:5432/s3_clone", // Update as needed
+      },
+    },
+    {
+      name: "api-gateway",
+      script: "../api-gateway/index.js", // Path to your entry file for the api-gateway service
+      instances: 1,
+      exec_mode: "fork",
+      watch: true, // Enable watching for file changes
+      env: {
+        NODE_ENV: "development",
+        PORT: 3000, // Port for API gateway
+      },
+      env_production: {
+        NODE_ENV: "production",
+        GATEWAY_SERVER_PORT: 8090,
+        PUBLIC_SERVICE_URL: "http://localhost:5005/publicPostRoutes",
+        AUTH_SERVICE_URL: "http://localhost:5006/auth",
+        CHAT_SERVICE_URL: "http://localhost:5007/chat",
+        S3_CLONE_SERVICE_URL: "http://localhost:5008/s3_clone",
       },
     },
   ],
