@@ -122,8 +122,8 @@ module.exports = {
         DB_PASSWORD: "admin",
         DB_HOST: "localhost",
         DB_PORT: 5432,
-        DB_NAME: "instagram", // Specify your database name
-        DB_URL: "postgres://postgres:admin@localhost:5432/instagram", // Update as needed
+        DB_NAME: "Instagram", // Specify your database name
+        DB_URL: "postgres://postgres:admin@localhost:5432/Instagram", // Update as needed
       },
     },
     {
