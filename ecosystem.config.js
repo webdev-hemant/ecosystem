@@ -103,6 +103,30 @@ module.exports = {
       },
     },
     {
+      name: "insta_scrap", // Name for your new application
+      script: "../insta_scrap/index.js", // Path to your entry file for the s3_clone service
+      instances: 1,
+      exec_mode: "fork",
+      watch: true,
+      env: {
+        NODE_ENV: "development",
+        PORT: 5009, // Port for s3_clone
+      },
+      env_production: {
+        NODE_ENV: "production",
+        SERVER_PORT: 5009,
+        CURRENT_HOST: "http://localhost:5000",
+        JWT_SECRET: "your_jwt_secret",
+
+        DB_USERNAME: "postgres",
+        DB_PASSWORD: "admin",
+        DB_HOST: "localhost",
+        DB_PORT: 5432,
+        DB_NAME: "instagram", // Specify your database name
+        DB_URL: "postgres://postgres:admin@localhost:5432/instagram", // Update as needed
+      },
+    },
+    {
       name: "api-gateway",
       script: "../api-gateway/index.js", // Path to your entry file for the api-gateway service
       instances: 1,
