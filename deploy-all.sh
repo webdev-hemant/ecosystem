@@ -1,5 +1,5 @@
 # Define an array of your microservices
-SERVICES=("api-gateway" "auth-microservice" "chat-microservice" "publicPost-microservice" "s3_clone" "ecosystem")
+SERVICES=("api-gateway" "auth-microservice" "chat-microservice" "publicPost-microservice" "s3_clone" "insta_scrap" "sop_be" "ecosystem")
 
 # 1. Loop through each service directory
 for SERVICE in "${SERVICES[@]}"; do
@@ -28,15 +28,15 @@ done
 
 echo "All services latest changes pulled successfully!"
 
+cd /home/ubuntu/be/ecosystem || exit
 # Stop all PM2 processes
-pm2 stop api-gateway s3_clone auth-microservice chat-microservice publicPost-microservice
+pm2 stop ecosystem.config.js
 
 # Delete all PM2 processes
-pm2 delete api-gateway s3_clone auth-microservice chat-microservice publicPost-microservice
+pm2 delete ecosystem.config.js
 
 # Flush logs
 pm2 flush
 
 # Start all processes again
-cd /home/ubuntu/be/ecosystem || exit
 pm2 start ecosystem.config.js --env production
