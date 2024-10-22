@@ -117,6 +117,7 @@ module.exports = {
         SERVER_PORT: 5010,
         CURRENT_HOST: "http://localhost:5000",
         JWT_SECRET: "your_jwt_secret",
+        API_GATEWAY_ENDPOINT: "http://localhost:8090",
 
         DB_USERNAME: "postgres",
         DB_PASSWORD: "admin",
@@ -141,7 +142,6 @@ module.exports = {
         SERVER_PORT: 5009,
         CURRENT_HOST: "http://localhost:5000",
         JWT_SECRET: "your_jwt_secret",
-        API_GATEWAY_ENDPOINT: "http://localhost:8090",
 
         DB_USERNAME: "postgres",
         DB_PASSWORD: "admin",
