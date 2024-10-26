@@ -118,6 +118,8 @@ module.exports = {
         CURRENT_HOST: "http://localhost:5000",
         JWT_SECRET: "your_jwt_secret",
         API_GATEWAY_ENDPOINT: "http://localhost:8090",
+        ADMIN_EMAIL: "admin@gmail.com",
+        ADMIN_PASSWORD: "securePassword123",
 
         DB_USERNAME: "postgres",
         DB_PASSWORD: "admin",
